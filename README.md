@@ -1,5 +1,5 @@
 # paper-style-checkers
-Accumulation of style checklists for research papers, implemented programmatically
+Accumulation of style checklists for research papers, implemented programmatically in vim.
 
 ## All figures have a reference in the text:
 ```
