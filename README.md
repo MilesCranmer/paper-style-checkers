@@ -20,11 +20,11 @@ Accumulation of style checklists for research papers, implemented programmatical
 - Copies all `tt` text to the beginning of the document
 
 ```
-:1/begin{document}/+1,1/begin{document}//texttt.*\n\(\(.*texttt.*\)\@!.\)*\n/s/^.*\(\\texttt{.\{-}}\).*$/\1/g
+:'<,'>s/^.*\(\\texttt{.\{-}}\).*$/\1/g
 ```
-- Cleans out non-tt text (most of this is just a range instead of highlighting).
+- Cleans out non-tt text from the selection.
 
-`:1/begin{document}/+1,1/begin{document}//texttt.*\n\(\(.*texttt.*\)\@!.\)*\n/!uniq`
+`:'<,'>!uniq`
 - Shows only the unique terms.
 
 Then, you should visually inspect these to see if there are any mixed-case terms, and fix those by hand.
@@ -37,14 +37,13 @@ Then, run on the first term:
 ```
 If a line is pasted above it, then it was stated with some non-tt usage. Then you can go modify it.
 
-Else, continue to run these commands on each line with `@:`.
-
+Else, continue to run these commands on each line with `@:`, or record this exe as part of a macro (with `q`).
 
 ## General grammar checks
 
-Because of the use of macros of math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
+Because of the use of macros or math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
 
-The majority of this text is usable, aside from some scattered numbers from newlines. One thing that must be fixed is the newlines within the same paragraph:
+The majority of this text is usable, aside from some scattered numbers from figures. One thing that must be fixed is the newlines within the same paragraph:
 
 ```
 :%g/.*\S.*\n.*\S.*\n/.,/\n\s*\n/j
