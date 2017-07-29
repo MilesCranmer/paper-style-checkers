@@ -27,3 +27,15 @@ Accumulation of style checklists for research papers, implemented programmatical
 With the range: `:1/begin{document}/+1,1/begin{document}//texttt.*\n\(\(.*texttt.*\)\@!.\)*\n/`, append:
 - `sort`, to sort the terms
 - `uniq`, to show only the unique ones.
+
+Then, you should visually inspect these to see if there are any mixed-case terms, and fix those by hand.
+
+Also, delete the terms which don't matter to you.
+
+Then, run on the first term:
+```
+:exe "norm! mxf{lvt}y/[^{]\<C-R>\"\\>\<enter>yy'xP"
+```
+If a line is pasted above it, then it was stated with some non-tt usage. So you can go modify it.
+
+Else, continue to run these commands on each line with: `@:`.
