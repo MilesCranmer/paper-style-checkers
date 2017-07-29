@@ -23,3 +23,7 @@ Accumulation of style checklists for research papers, implemented programmatical
 :1/begin{document}/+1,1/begin{document}//texttt.*\n\(\(.*texttt.*\)\@!.\)*\n/s/^.*\(\\texttt{.\{-}}\).*$/\1/g
 ```
 - Cleans out non-tt text (most of this is just a range instead of highlighting).
+
+With the range: `:1/begin{document}/+1,1/begin{document}//texttt.*\n\(\(.*texttt.*\)\@!.\)*\n/`, append:
+- `sort`, to sort the terms
+- `uniq`, to show only the unique ones.
