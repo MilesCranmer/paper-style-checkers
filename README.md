@@ -39,6 +39,10 @@ If a line is pasted above it, then it was stated with some non-tt usage. Then yo
 
 Else, continue to run these commands on each line with `@:`, or record this exe as part of a macro (with `q`).
 
+## Most important papers covering same topics as paper paper are referenced
+
+Paste bibcodes into: http://adsabs.harvard.edu/tools/citehelper, and implement them one-by-one if necessary.
+
 ## General grammar checks
 
 Because of the use of macros or math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
