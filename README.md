@@ -43,6 +43,41 @@ You can also run this on terms defined with `\textsc{...}`, and so on.
 
 Paste bibcodes into: http://adsabs.harvard.edu/tools/citehelper, and implement them one-by-one if necessary.
 
+### To find relevant bibcodes:
+
+Copy the main tex file, and run:
+
+```
+:%v/cite/d_
+```
+To delete lines without citations
+
+```
+:%s/\\cite.\?{\(.\{-}\)}/\rcitation: \1\r/g | %v/citation: /d_ | %s/citation: //g 
+```
+
+Then
+
+```
+:%s/,/\r/g
+```
+
+To show one reference on each line.
+
+Then, paste these at the top+1 of a (merged) copy of your bib file. Run:
+
+```
+:silent! :2,/\n\n/g/^/exe "norm! mx0*0Vf{%y'xP'xdd"
+```
+
+To move up only the relevant citations in between the reference phrases. Then, delete everything after the last one. Now, you will need to find the ADS urls by hand.
+
+Run this to get the bibcodes out:
+```
+:%v/adsabs/d_ | %s/^.*edu\/abs\/\(.*\)},\s*$/\1/g
+```
+These can be pasted into the citation helper.
+
 ## General grammar checks
 
 Because of the use of macros or math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
@@ -69,3 +104,5 @@ Once you have recompiled, then just:
 ```
 
 To uncomment the lines.
+
+
