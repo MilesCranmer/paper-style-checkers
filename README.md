@@ -20,7 +20,7 @@ Accumulation of style checklists for research papers, implemented programmatical
 - Copies all `tt` text to the beginning of the document
 
 ```
-:'<,'>s/^.*\(\\texttt{.\{-}}\).*$/\1/g
+:'<,'>s/^.*\\texttt{\(.\{-}\)}.*$/\1/g
 ```
 - Cleans out non-tt text from the selection.
 
@@ -31,13 +31,13 @@ Then, you should visually inspect these to see if there are any mixed-case terms
 
 Also, delete the terms which don't matter to you.
 
-Then, run on the first term:
+Then, run on the first line of tt terms:
 ```
-:exe "norm! mxf{lvt}y/[^{]\<C-R>\"\\>\<enter>yy'xP"
+:silent! :.,/\n\n/g/^/exe "norm! qbqmx0\"ay$IWord: \<esc>/\\n\\n\<enter>j/\\(texttt{\\)\\@!\<C-R>\"a\<enter>\"byy'x\"bP"
 ```
-If a line is pasted above it, then it was stated with some non-tt usage. Then you can go modify it.
+If a line that isn't blank is pasted above the word, then it was stated with some non-tt usage. Then you can go modify it.
 
-Else, continue to run these commands on each line with `@:`, or record this exe as part of a macro (with `q`).
+You can also run this on terms defined with `\textsc{...}`, and so on.
 
 ## Most important papers covering same topics as paper paper are referenced
 
