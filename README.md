@@ -12,7 +12,7 @@ Accumulation of style checklists for research papers, implemented programmatical
 - With the labels highlighted, this searches for reference to that text, and pastes it above.
 - Will fail if nothing is found.
 
-## All typewriter-text terms are used consistently:
+## All typewriter-text (or, `\textsc{}`, `\textit`, etc.) terms are used consistently:
 
 ```
 :%g/\\texttt{/t?begin{document}?
@@ -22,7 +22,7 @@ Accumulation of style checklists for research papers, implemented programmatical
 ```
 :'<,'>s/^.*\\texttt{\(.\{-}\)}.*$/\1/g
 ```
-- Cleans out non-tt text from the selection.
+- With `tt` term text highlighted, this cleans out non-tt text from the selection.
 
 `:'<,'>!uniq`
 - Shows only the unique terms.
