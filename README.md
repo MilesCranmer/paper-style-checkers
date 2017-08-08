@@ -39,7 +39,7 @@ If a line that isn't blank is pasted above the word, then it was stated with som
 
 You can also run this on terms defined with `\textsc{...}`, and so on.
 
-## Most important papers covering same topics as paper paper are referenced
+## Most important papers covering same topics as paper are referenced
 
 Paste bibcodes into: http://adsabs.harvard.edu/tools/citehelper, and implement them one-by-one if necessary.
 
@@ -78,7 +78,7 @@ Run this to get the bibcodes out:
 ```
 These can be pasted into the citation helper.
 
-## General grammar checks
+## No grammar mistakes; well-written English
 
 Because of the use of macros or math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
 
