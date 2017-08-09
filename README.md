@@ -113,7 +113,7 @@ This sews together all single newlines, but not double newlines. The result is p
 
 Using the text, I send it to [Grammarly](https://app.grammarly.com/), and correct the mistakes by hand. You can
 also try [hemingway](http://www.hemingwayapp.com/), but this often seems too extreme
-for academic writing (and I find it dissuades a healthy amount of sentence variety).
+for academic writing (and I find it dissuades a healthy amount of sentence type variety).
 
 It might also be wise sometimes to comment-out section headers and some figures ahead of time, using a command like:
 ```
