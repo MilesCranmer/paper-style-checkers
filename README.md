@@ -111,7 +111,9 @@ The majority of this text is usable, aside from some scattered numbers from figu
 
 This sews together all single newlines, but not double newlines. The result is paragraphs being in a single line of the document.
 
-Using the text, I send it to [Grammarly](https://app.grammarly.com/), and correct the mistakes by hand.
+Using the text, I send it to [Grammarly](https://app.grammarly.com/), and correct the mistakes by hand. You can
+also try [hemingway](http://www.hemingwayapp.com/), but this often seems too extreme
+for academic writing (and I find it dissuades a healthy amount of sentence variety).
 
 It might also be wise sometimes to comment-out section headers and some figures ahead of time, using a command like:
 ```
