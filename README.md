@@ -47,7 +47,8 @@ Paste the abstract text into vim, and put it all into one line (you might want t
 
 `:s/[\.;:,()]//gc`
 - Deletes all punctuation in the abstract
-`:s/ /%20/gc`
+
+`:s/\s\+/%20/gc`
 - This gets the abstract text ready to paste into a URL.
 
 After this, copy-paste the following URL base onto the start of your vim string:
