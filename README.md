@@ -41,9 +41,27 @@ You can also run this on terms defined with `\textsc{...}`, and so on.
 
 ## Most important papers covering same topics as paper are referenced
 
+### (Using the abstract)
+
+Paste the abstract text into vim, and put it all into one line (you might want to call `:set paste` before pasting).
+
+`:s/[\.;:,()]//gc`
+- Deletes all punctuation in the abstract
+`:s/ /%20/gc`
+- This gets the abstract text ready to paste into a URL.
+
+After this, copy-paste the following URL base onto the start of your vim string:
+
+`http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?return_req=no_params&arxiv_sel=ALL&db_key=PRE&text=`
+
+Make sure there are no spaces after the `=`. Then, copy this entire thing into your browser URL bar, and hit enter. The abstracts
+hit should look very similar to what you are working on.
+
+### (Using bibcodes)
+
 Paste bibcodes into: http://adsabs.harvard.edu/tools/citehelper, and implement them one-by-one if necessary.
 
-### To find relevant bibcodes:
+#### To find relevant bibcodes:
 
 Copy the main tex file, and run:
 
@@ -80,7 +98,9 @@ These can be pasted into the citation helper.
 
 ## No grammar mistakes; well-written English
 
-Because of the use of macros or math, instead of using something like [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, I find using a [pdf to text](http://pdftotext.com/) tool on the compiled file is much better.
+Both the tools [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, and a [pdf to text](http://pdftotext.com/) tool work to extract text from the latex. You should try them both and see what
+works best for your particular file. If there is a lot of inline math, you may find that the pdf to text works better.
+Else, `detex` generally produces cleaner results.
 
 The majority of this text is usable, aside from some scattered numbers from figures. One thing that must be fixed is the newlines within the same paragraph:
 
