@@ -97,7 +97,7 @@ Run this to get the bibcodes out:
 ```
 These can be pasted into the citation helper.
 
-## No grammar mistakes; well-written English
+## No grammar mistakes, appropriate word choices, sentence variety.
 
 Both the tools [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en), which takes the TeX file and extracts the text, and a [pdf to text](http://pdftotext.com/) tool work to extract text from the latex. You should try them both and see what
 works best for your particular file. If there is a lot of inline math, you may find that the pdf to text works better.
