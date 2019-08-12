@@ -103,6 +103,17 @@ Both the tools [`detex`](https://www.ctan.org/tex-archive/support/detex?lang=en)
 works best for your particular file. If there is a lot of inline math, you may find that the pdf to text works better.
 Else, `detex` generally produces cleaner results.
 
+However, before using `detex`, you should replace inline LaTeX commands with a generic token, like "X". Grammarly won't flag missing words whenever you use \cite{} then.
+
+```
+%s/\$.\{-}\$/X/g
+%s/\\cite{.\{-}}/X/g
+%s/\\citealt{.\{-}}/X/g
+%s/\\ref{.\{-}}/X/g
+%s/\\cref{.\{-}}/X/g
+```
+
+
 The majority of this text is usable, aside from some scattered numbers from figures. One thing that must be fixed is the newlines within the same paragraph:
 
 ```
